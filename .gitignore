@@ -1,0 +1,20 @@
+# 忽略所有 PDF 文件
+*.pdf
+# 忽略所有 PNG 文件  
+*.png
+# 忽略所有 CSV 文件
+*.csv
+*.h5ad
+*.pt
+*.pickle
+*.out
+*.err
+*.gz
+*.tsv
+*.RData
+*.Rhistory
+*.rds
+results/
+data/
+__pycache__/
+*.pyc
