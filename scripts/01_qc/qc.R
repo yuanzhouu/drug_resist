@@ -23,6 +23,11 @@ for (sample in samples) {
 
   dat <- Load10X_Spatial(data.dir = paste0("/data/xu_lab_projectsx/Hasan/VisiumHD/", sample, "/outs"), bin.size = c(8))
 
+  # Read and Add ENSG name
+  tmp_data <- Read10X(data.dir = paste0(
+  '/data/xu_lab_projectsx/Hasan/VisiumHD/', sample, 
+  '/outs/binned_outputs/square_008um/filtered_feature_bc_matrix/'), gene.column = 1)
+  dat1[["Spatial.008um"]][['ENSG']] <- rownames(tmp_data)
   # add mitocondrial gene percentage to the data
   dat[["percent.mt"]] <- PercentageFeatureSet(dat, pattern = "^MT-")
 
