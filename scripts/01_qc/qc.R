@@ -27,7 +27,10 @@ for (sample in samples) {
   tmp_data <- Read10X(data.dir = paste0(
   '/data/xu_lab_projectsx/Hasan/VisiumHD/', sample, 
   '/outs/binned_outputs/square_008um/filtered_feature_bc_matrix/'), gene.column = 1)
-  dat1[["Spatial.008um"]][['ENSG']] <- rownames(tmp_data)
+  ensg_vector <- rownames(tmp_data)
+  names(ensg_vector) <- rownames(dat) 
+  dat[["Spatial.008um"]][["ENSG"]] <- ensg_vector
+  
   # add mitocondrial gene percentage to the data
   dat[["percent.mt"]] <- PercentageFeatureSet(dat, pattern = "^MT-")
 
