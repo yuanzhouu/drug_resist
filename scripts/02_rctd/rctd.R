@@ -9,9 +9,9 @@ if (length(args) == 0) {
 sample <- args[1]
 
 # Define paths
-ref_path <- "/data/xu_lab_projectsx/yuanzhou/drug_resist/results/02_rctd/ref/ref_lam_lung.rds"
+ref_path <- "/data/xu_lab_projectsx/yuanzhou/drug_resist/results/02_rctd/ref/ref_lam_lung_scran.rds"
 query_path <- paste0("/data/xu_lab_projectsx/yuanzhou/drug_resist/results/02_rctd/query/query_", sample, ".rds")
-output_dir <- "/data/xu_lab_projectsx/yuanzhou/drug_resist/results/02_rctd/test_results"
+output_dir <- "/data/xu_lab_projectsx/yuanzhou/drug_resist/results/02_rctd/scran_results"
 sample_dir <- paste0(output_dir, "/", sample)
 dir.create(sample_dir, showWarnings = FALSE, recursive = TRUE)
 
